@@ -1,0 +1,108 @@
+
+
+h1 { 
+	text-align: center;
+	color: black;
+	font-size: 40px;
+	font-family: Segoe UI;
+
+ }
+
+ h2 {
+ 	text-align: center;
+	color: black;
+	font-size: 30px;
+	font-family: Arial;
+ }
+
+ hr {
+ 	border-color:#264270;
+ 	width: 50%
+ }
+
+body {
+	background-color: #5075b2
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+
+
+.pcard {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	width: 250px;
+	height: 250px;
+	background-color: silver;
+	border-radius: 0 10px 10px 10px;
+	margin: 30px;
+	display: inline-block;
+	text-align: center;
+}
+
+.pcard:hover {
+	box-shadow: 0 4px 8px 6px rgba(0,0,0,0.2);
+}
+
+.cimg {
+	width: 100%;
+	height:75%;
+	border-radius: 0 10px 0 0;
+}
+
+
+.container {
+    padding: 2px 16px;
+    
+}
+
+.ctitle {
+	font-family: Verdana;
+}
+
+.scroll-block {
+	width: 300px;
+	height: 600px;
+	overflow-y: scroll;
+}
+
+.card-block{
+	
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+/*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+}*/
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #264270;
+    border-radius: 5px;
+}
+
+
+.left-arrow, .right-arrow {
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	text-align: center;
+	padding: 10px;
+	background-color: pink;
+	opacity: .3;
+	border-radius: 50px;
+	margin-top: 10%;
+}
+.left-arrow {float: left;}
+.right-arrow {float: right;}
+.left-arrow:hover, .right-arrow:hover{
+	background-color: red;
+}
