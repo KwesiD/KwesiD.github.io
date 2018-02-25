@@ -17,11 +17,16 @@ h1 {
 
  hr {
  	border-color:#264270;
- 	width: 50%
+ 	width: 50%;
+ 	/*margin-left: 25%;
+ 	position: fixed;*/
+
  }
 
 body {
-	background-color: #5075b2
+	background-color: #5075b2;
+	transition: 0.5s;
+	overflow-x: hidden;
 }
 
 a {
@@ -63,6 +68,23 @@ a {
 	font-family: Verdana;
 }
 
+.menu-bar {
+	text-align: center;
+}
+
+.menu-item {
+	font-size: 30px;
+	font-family: Verdana;
+	text-align: center;
+	display: inline-block;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.menu-item:hover {
+	color: white;
+}
+
 .scroll-block {
 	width: 300px;
 	height: 600px;
@@ -100,9 +122,43 @@ a {
 	opacity: .3;
 	border-radius: 50px;
 	margin-top: 10%;
+	transition: 0.5s;
 }
 .left-arrow {float: left;}
 .right-arrow {float: right;}
+
 .left-arrow:hover, .right-arrow:hover{
 	background-color: red;
+	cursor:pointer;
+}
+
+.left-arrow.hide, .right-arrow.hide{
+	opacity: 0;
+	visibility: hidden;
+}
+
+.page {
+	transition: all 0.5s;
+	margin-left: 50px;
+	margin-right: 50px;
+	/*display: inline-block;*/
+	/*position: relative;*/
+}
+
+.page.hide {
+	/*opacity: 0;*/
+	position: absolute;
+	visibility: hidden;
+	/*transform: translate(200%,0px);*/
+}
+
+.text-block {
+	font-family: Verdana;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 30px;
+	padding-left: 300px;
+	padding-right: 300px;
+	line-height: 35px;
+
 }
