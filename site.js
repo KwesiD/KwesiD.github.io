@@ -33,7 +33,7 @@ const pages = document.getElementsByClassName("page");
 let pageIndex = 0; //0=about me 1=projects 2=resume 3=contact
 let leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
-const backgroundColors = ["#69C9E0","#6ffc81","#F0BD54","#F05F54"];
+const backgroundColors = ["#69C9E0","#85fcad","#F0BD54","#ff9191"];
 
 function slide(direction){
 	let currPage = document.getElementById("page"+pageIndex);
@@ -54,6 +54,10 @@ function slide(direction){
 
 	if(pageIndex === 0){
 		leftArrow.classList.toggle('hide');
+		if(rightArrow.classList.contains("hide")){
+			rightArrow.classList.toggle('hide');
+		}
+		rightArrow.style.backgroundColor = backgroundColors[pageIndex+1];
 	}
 	else if(pageIndex < 3){
 		if(leftArrow.classList.contains("hide")){
@@ -62,11 +66,18 @@ function slide(direction){
 		if(rightArrow.classList.contains("hide")){
 			rightArrow.classList.toggle('hide');
 		}
+		rightArrow.style.backgroundColor = backgroundColors[pageIndex+1];
+		leftArrow.style.backgroundColor = backgroundColors[pageIndex-1];
 	
 	}
 	else{
 		rightArrow.classList.toggle('hide');
+		if(leftArrow.classList.contains("hide")){
+			leftArrow.classList.toggle('hide');
+		}
+		leftArrow.style.backgroundColor = backgroundColors[pageIndex-1];
 	}
+
 	document.body.style.backgroundColor = backgroundColors[pageIndex];
 	console.log(pageIndex);
 }
@@ -74,6 +85,7 @@ function slide(direction){
 
 function slideMenu(newPageIndex){
 	let direction = newPageIndex - pageIndex;
+	
 	let currPage = document.getElementById("page"+pageIndex);
 	pageIndex += direction;
 	let nextPage = document.getElementById("page"+pageIndex);
@@ -95,6 +107,7 @@ function slideMenu(newPageIndex){
 		if(rightArrow.classList.contains("hide")){
 			rightArrow.classList.toggle('hide');
 		}
+		rightArrow.style.backgroundColor = backgroundColors[pageIndex+1];
 	}
 	else if(pageIndex < 3){
 		if(leftArrow.classList.contains("hide")){
@@ -103,6 +116,8 @@ function slideMenu(newPageIndex){
 		if(rightArrow.classList.contains("hide")){
 			rightArrow.classList.toggle('hide');
 		}
+		rightArrow.style.backgroundColor = backgroundColors[pageIndex+1];
+		leftArrow.style.backgroundColor = backgroundColors[pageIndex-1];
 	
 	}
 	else{
@@ -110,7 +125,9 @@ function slideMenu(newPageIndex){
 		if(leftArrow.classList.contains("hide")){
 			leftArrow.classList.toggle('hide');
 		}
+		leftArrow.style.backgroundColor = backgroundColors[pageIndex-1];
 	}
+	
 	document.body.style.backgroundColor = backgroundColors[pageIndex];
 }
 
@@ -143,4 +160,5 @@ function hideOtherPages(){
 hideOtherPages();
 if(pageIndex === 0){
 	leftArrow.classList.toggle('hide');
+	rightArrow.backgroundColor = backgroundColors[1];
 }

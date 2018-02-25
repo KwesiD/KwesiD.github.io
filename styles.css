@@ -42,8 +42,8 @@ a {
 	transition: 0.3s;
 	width: 250px;
 	height: 250px;
-	background-color: silver;
-	border-radius: 0 10px 10px 10px;
+	background-color: #92f4ac;
+	border-radius: 0 30px 30px 30px;
 	margin: 30px;
 	display: inline-block;
 	text-align: center;
@@ -56,7 +56,7 @@ a {
 .cimg {
 	width: 100%;
 	height:75%;
-	border-radius: 0 10px 0 0;
+	border-radius: 0 30px 0 0;
 }
 
 
@@ -122,7 +122,7 @@ a {
 	font-size: 30px;
 	text-align: center;
 	padding: 10px;
-	background-color: pink;
+	/*background-color: pink;*/
 	opacity: .3;
 	border-radius: 50px;
 	margin-top: 10%;
@@ -132,7 +132,8 @@ a {
 .right-arrow {float: right;}
 
 .left-arrow:hover, .right-arrow:hover{
-	background-color: red;
+	/*background-color: red;*/
+	filter: brightness(75%);
 	cursor:pointer;
 }
 
