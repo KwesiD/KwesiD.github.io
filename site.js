@@ -33,29 +33,12 @@ const pages = document.getElementsByClassName("page");
 let pageIndex = 0; //0=about me 1=projects 2=resume 3=contact
 let leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
+const backgroundColors = ["#69C9E0","#6ffc81","#F0BD54","#F05F54"];
 
 function slide(direction){
-	// currPage = (currPage+1)%4;
-	// for(let i = 0;i < pages.length;i++){
-	// 	if(i !== currPage){
-	// 		pages[i].style.display = "none";
-	// 		pages[i].style.opacity = "0";
-	// 	}
-	// 	else{
-	// 		pages[i].style.display = "inline-block";
-	// 		pages[i].style.opacity = "100";
-	// 	}
-	// }
-
-	// page1 = document.getElementById("page1");
-	// page1.classList.toggle('fade');
-	// page2 = document.getElementById("page2");
-	// page2.style.display = "inline-block";
-	// page2.classList.toggle('fade');
-
-	currPage = document.getElementById("page"+pageIndex);
+	let currPage = document.getElementById("page"+pageIndex);
 	pageIndex += direction;
-	nextPage = document.getElementById("page"+pageIndex);
+	let nextPage = document.getElementById("page"+pageIndex);
 	if(direction > 0){
 		currPage.style.transform = "translate(-200%,0px)";
 		currPage.classList.toggle('hide');
@@ -84,28 +67,51 @@ function slide(direction){
 	else{
 		rightArrow.classList.toggle('hide');
 	}
-
-	// page1 = document.getElementById("page1");
-	// page1.style.transform = "translate(200%,0px)";
-	// page1.classList.toggle('fade');
-	// page2 = document.getElementById("page2");
-	// page2.classList.toggle('fade');
-	// page2.style.transform = "translate(0px,0px)";
-
-	//document.body.style.backgroundColor = "#50b2a0";
-
-	// page1.style.opacity = "0";
-	// page1.style.visibility = "hidden";
-	// //page1.style.display = "none";
-	// document.body.style.backgroundColor = "#50b2a0";
-	// page2 = document.getElementById("page2");
-	// page2.style.visibility = "visible";
-	// page1.style.display = "none";
-	// //page2.style.opacity = "100";
-	// //page2.style.zIndex = 0;
-	// //page2.style.display = "inline-block";
+	document.body.style.backgroundColor = backgroundColors[pageIndex];
+	console.log(pageIndex);
+}
 
 
+function slideMenu(newPageIndex){
+	let direction = newPageIndex - pageIndex;
+	let currPage = document.getElementById("page"+pageIndex);
+	pageIndex += direction;
+	let nextPage = document.getElementById("page"+pageIndex);
+	if(direction > 0){
+		currPage.style.transform = "translate(-200%,0px)";
+		currPage.classList.toggle('hide');
+		nextPage.classList.toggle('hide');
+		nextPage.style.transform = "translate(0px,0px)";
+	}
+	else{
+		currPage.style.transform = "translate(200%,0px)";
+		currPage.classList.toggle('hide');
+		nextPage.classList.toggle('hide');
+		nextPage.style.transform = "translate(0px,0px)";
+	}
+
+	if(pageIndex === 0){
+		leftArrow.classList.toggle('hide');
+		if(rightArrow.classList.contains("hide")){
+			rightArrow.classList.toggle('hide');
+		}
+	}
+	else if(pageIndex < 3){
+		if(leftArrow.classList.contains("hide")){
+			leftArrow.classList.toggle('hide');
+		}
+		if(rightArrow.classList.contains("hide")){
+			rightArrow.classList.toggle('hide');
+		}
+	
+	}
+	else{
+		rightArrow.classList.toggle('hide');
+		if(leftArrow.classList.contains("hide")){
+			leftArrow.classList.toggle('hide');
+		}
+	}
+	document.body.style.backgroundColor = backgroundColors[pageIndex];
 }
 
 function hideOtherPages(){
@@ -135,3 +141,6 @@ function hideOtherPages(){
 
 
 hideOtherPages();
+if(pageIndex === 0){
+	leftArrow.classList.toggle('hide');
+}

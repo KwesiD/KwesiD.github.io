@@ -24,7 +24,8 @@ h1 {
  }
 
 body {
-	background-color: #5075b2;
+	/*background-color: #5075b2;*/
+	background-color: #69C9E0;
 	transition: 0.5s;
 	overflow-x: hidden;
 }
@@ -83,6 +84,9 @@ a {
 
 .menu-item:hover {
 	color: white;
+	cursor: pointer;
+	/*-webkit-text-stroke-width: 1px;
+   	-webkit-text-stroke-color: black;*/
 }
 
 .scroll-block {
@@ -97,7 +101,7 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 5px;
 }
 
 /* Track */
